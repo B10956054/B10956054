@@ -1,26 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/seo-and-marketing-18/50/50-512.png" type="image/ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <title>RWD-B10956054 期末作業</title>
+    <style>
+        body {
+            font-family: 'Noto Sans JP';
+        }
+        
+        .navbar {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        
+        .navbar img {
+            width: 80%;
+        }
+        
+        .navbar-nav {
+            margin: auto;
+        }
+        
+        .jumbotron {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            background-image: url('https://mis.npust.edu.tw/wp-content/uploads/2013/01/v.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .jumbotron hr {
+            margin: 5%;
+            height: 0.25rem;
+            color: rgba(255, 255, 255, 1);
+        }
+        
+        .teacher {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        
+        .teacher .col-12 {
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        
+        .card {
+            margin: auto;
+        }
+        
+        .title {
+            text-align: center;
+            color: blue;
+            font-size: 150%;
+        }
+    </style>
+</head>
 
-    <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/linkid.js"></script>
-    <title>B10956054</title>
-    <div>
-        <div>
-            <div>
-                <p>dadad</p>
-                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8ODg4QDQ8QDQ4NEBAPDw4QDQ8ODhAWFREWFhYaFRUYHiggGBslGxUYITMhJTUwLi4uIyAzODMsQygtLisBCgoKDg0OGhAQGDImICUtKy0wMi8wLSsrKystKysrLystKzMrLSstLS0tLS0rLS0tLSstLSstLS8tKzAtLSstLf/AABEIAKMBNgMBIgACEQEDEQH/xAAbAAEBAAMBAQEAAAAAAAAAAAAAAQIFBgQDB//EAE4QAAEEAQICBQYJBwgJBQAAAAEAAgMRBAUSITEGEyJBURQyYXGBkRYjQlKSk6Gz0QcVJDVTscEzNFVzorLS02JkcoKDlMPw8SVDRWN0/8QAGwEBAAMBAQEBAAAAAAAAAAAAAAEDBAUCBgf/xAA3EQACAgECBAUCAwcDBQAAAAAAAQIRAyExBBJBURNhcYGRIrEFofAjMlKSwdHxFDNCQ1OywuH/2gAMAwEAAhEDEQA/APGiIuAfpQREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBFUUAiKogIiqICKqqICIqiAiKogIiqICKoiAiLJRARFUQERVEBFUSkBEVRARFVUBiiqICIqiAiqIgIiqICIqiAiLJEBUVpKQWEVpKUCzFFlSlKRZEWSiiwRFlSlILIiyUUiyIsqSlAsxRZUlILMUVpWkFmKqtJSCzFFlSlKRZEWVJSgWYoskpSLMUWVKUoFkRZUpSCyIrStILMUWVKUgsiLKkpBZiitK0gsxRWlUFlpRZUiHkxpKWVL6xY73C2Mc4DhbWOcPsUEN0fBdD0X6OeV7pJndVjRec7gC4gWQCeAAHEn/sajyGb9lJ9U/8F2vSVj8fTcXGha65Gt6zY1xum2+65W9wPvV2GKdyktEvnsYuMzTXJixupTdX2SVt+q6f4Pm7WtIgPVx4gmDeG/qIn7vU553FY5Wh4WoxOm04iKZvOHg0H0FvyT4Edn945DyCb9lJ9U78FtuipnxsyF3VyBr3CN/xbwCHkA3w7jTvYrI5uZ8s4qvJVXoU5OE8KDyYckuZa6ytSrWpJ6a+2poXNIJBBBBIIIogjmCFiuo6b6Y5uYTExzmzMbIdrHEBxJa7l6W37VofIZv2Un1T/wAFRODhJxfQ3YM8cuKORdUn8nlVVpF4LjGkpZIpBjSUsqSlAJSlLKkUgxpKWSKAY0rStIgMaSllSICUpSypFIMaRZUlKAY0iyRAYpSyRAY0iyRAY0lLKkQGKUsqRASkVRAZ0itKryQY0v0n8nR/QnD5s7x/YYf4r83pfo35OT+iSjwncffGz8Fr4L/d9mcn8aV8I/VHWIi5zplmyxwxRwu2SZMoj33t2g86PcbIF+Frr5J8kXJnyeDC82RY49f1ZuJdQgYdsk8THfNdKxrvcSvQyQOALSHA8iCCD7Vz+L0PwmMp7DM75UjnvBce800gBfTT+jjMacSY8sscdO3wbt0biRQu/D02eXEd9alltXFV5Pb8tfkunj4SnyZJWu8VT+JNr396N+iIr0Yz8U1I3PMfGWQ+95UwsGXIfsgY6R9F21tcAKs8fWF838XOPiSfeV1P5N/51J/UP+8jXz+KPiZEn1P0DisjwYJTS1ij1t6Pv/NTmeT/AKV1gcOyzra3gedfzbWg0no9JPknHlL8dwY553R2eFd1iwb5rqBq2R+anz9YeuEtB+1t11oFVVcuC28w/wDVoj/qb/vFs8HHPlq9o+6d/nocePFcRjWVOrvK7VupRUW97XLrp1OaZ0HhLtrc9jnfNEbS7hz4CRazT+jIklyYpsmPHdjvawWA4Pu+Itw7gPetzpuhZTNTM749sPXTP3dZGeDt9Gg6/lBazWtHyMrOzPJ4+s6uQbu2xlW0V5xHgVXLHFRT8N7tVb1VfPwX4+Jm5uH+oTXIpc1Q+l81V226PY9T+gwcxxx8uOZzRwYGUCe4FweaXIkLvehOjZOLNIciPqw6PaDvY6zvafkkrhHDifWqs8FGMWo1d6a9K7mngs0p5MkHkU0uWmlFbp2vp00o6DS+ihlgbNkZDMVkn8nuAJcO4klwAuuA48F6/ghi/wBJQ/Rj/wAxffpRG46dpu0F1RR8mk/+wPBcj5LL+zf9B34L3k8PG1HkvRa2zxhefMnPxuXWSrli6SdbtNneQ9G8UYEkXXxOt4d5XtjthBbw3bvDhz71qvghi/0lD9GP/MX1xYnfmKdu124yt7O07v5WPuXJ+SS/s3/Qd+CnLPGuX6P+K6vzKuFx5m8n7d6Ta/djrotdtPTb8zpMnoawQySwZjJupa5xa1g2naLI3B5o0tFoeA3JyooXOLRI4gubW4AAu4X6l7IdYngw5MURhglJJkLSx5BoPBvzrAAvuHsq9Df1hj+t33b1W/DlOCiq2vfv5+RoX+ox4crySulLldJOlHfTTf33NzPoWkRSGOTLmY9ppzS5nA+n4ul4NW6NRRZkMLZwyGdu4Sylp2UDYJFA3wrlz9+31nodJkZE0zZomiR24NO6xwA4+5Y9MsV78nBayI5Gxlujbfaa1w3C+4EcL9K0ZMdRk3Cqarz19WYMHFc2THGOdu4y5rr6Xy2t0lvb1daa6Hp0fo3jRxZTevhyetj29ZsjPUja7j5x9fd5q1XwPxr/AFlD7mf5i6nTSwxz7dPOMNnajMcbOv7LuHDn4cfFeEyRf0K7/l4FbLFj5V9Pf+Lv+v6FOHis6y5Hzvdf9rsu+n8unfWz5a/0axpep+PhxNkezzIx1g4UfOHL281wOdjtilfG17ZWscWh7a2urvC/UdYLfi92nnM7HCo43dXy4drl7F+X5mM+KQtkjMTmm9jgbaDxHPnw71n42MYu0q+e3wbPwbJOcEpSvsvp7u3/ABfzaa+ht8PQXwyadLLsfHlyw0zi7gXNNOBFcWlY9NoWszpAxoYNsZpoAFlovgF2UrcZjdMiyS4TR9T1IaH0XtDG9rhVbq5rXdKo9O6ybr3vGV1fZaOs23s7HIV4L3kwqONq0tVu/Lb+yK+H42WTPGThJ6TWi0f1qmvJJU33PJ0e0nr9KyAyNhmll7DnABwoM+UeVdr7fFa/4E53zY/rWraau+TDwcPFgc+PIlIe7Y9zHi7JBI4+e8D2FfTphlzRvwseCWVjy0BzmSvYXWWsaXEGzxa7monCHL9SdxUdu71GLPneX9nJcuSU2rTdKNK99nSr5NLJ0LzgCdjHV3NlZZ9Vrn3sLSWuBa5pILSKIINEEdxX6PrebI3VMKJkj2xua0vYHuDHbnuHabyPLvXKdM2VqGRXDiw++JpKrz4oQT5ejr8rNPA8XmytLKl9UeZVar6uWnq/X9aaOkpWkpZDqERZIgLSiypKQiyUu/8AybP+JyB4SNPvbX8FwNLufybHhlD0wn7z8Fp4N/tl7/ZnM/F1fBz9v/JHbLU6/pLcyDqydrmnex/zXAEcR3iiVtlgXgEAkWeQvifUu1KKknF7M+Px5JY5qcHTWpyserZ2GA3NxzPG3h5RCd5od7u737Vu9J1iDLbcL7IFuYezI31t8PSOC2S4/pLisx8nEycemTSThj2N7PWAniSB66PjYWeTnhXNdrz39n/f5N+PweLlycnJN3TX7rdXrHpfdbdjsF85nUxx8Gk/YvovJqbtuPO75sUh9zCtDdHOiuZpH41X7guq/Jx/OpP6h/3ka5euK6HoNmRQZMrpXtiaYnNDnGgTvYa+wrg8K6yRv9aH3X4inLh8qS1aZ7//AIOT+v8A+uF0U361i/8Axv8AvV5fzfh/m90flB8mMm4zb2cHbwauq58FlBnRT6pG6GRsoGI9pLTYB6wFdCEeXltraHXs3/c4WTL4viOKdXmeqa/ejGl66bGpzNM1YyymKWQMMj9g8qIpu47eF8OFLwaXp2oumyWxT9XKxzOvLpnW40a4gG+FrY5Wi6o6WUx5DxGZHljfLJRTdxoV3cO5fLQ9MeMnJgzHSCd8TZWSNyJRfMXYI38xzvkVS8b5kqkter9fI1riIrFJ8+N0k/pjbq43acta6+evQ+0mk6wASMncQPNE7rPqtoC4ctIJBFEEgg8CCOdrtOiIyGS5MmTJIIsZr2P3yPc0PBBPPhwDSfaPFcjmT9bLJIRXWSPkI8Nzif4rPnacIyV63u726m3g5TWaeN8rrl1iuXV3p56fc72bVn4mHp2wxgSxwxudIxz2sHVt400jkvhrvSHOwnta9mM9r27myNjl2u8R5/McPeF5OmbdmHp8R85sYB/3Y2NP2lfDQ9UhyYBhZxocBBNdFhHBos8iOQPKuB9OueWSm8alTpV2ulo/U5uLh8fhRzvGpK58yq3XM/qXeu3VehPh5lfsoPoSf40+HeX+yg+hJ/jWr1vQJ8R1PG6MmmStB2HwB+afQfZa2+h9HGxN8p1GoomEObE+txI5F4PP/Z5n7DRGfEuXLbTW91p5vT/PTqbJ4/w+ONZOSLT2pW5Psl3+3U9+uZr5dJEmWxjZZnMMbWhwo7rBokkHYCfUVznQ79YY3rd/ccp0k1p2ZNdERMtsTDzrvJ/0jX7h6Teh4/T8f1u/uOUSyKeeNO6cVffXf3+xOHA8PB5E1TanKltG4vReiS9zY9IOjmZNlzyRRbmPdbTvhHcPF1rZdKZpmZWC3Hf1Mr2dTuoEDe9reIIIIulq+kWr5keXOyKWVrA6g1p4DgOXBbbpNxz9LJ574/vmqz6EsnJd2r/me1FC8Zy4dZuVrklVXt4a3ttdtv7Hufh5oNO1WNp8DiwA/vU8iz9u786M28t3ksG33ry9IYNMOQTmSSNm2tsNEhFVw81pC9DosD83NaXv8j38H7X7928922+d9yvfLzSV7X/1JdO/bzetGFSnyY5cv7zS/wBiFar/AIuvqfZaWXyLUHB3ValHI4Dg3yaED2kXS4vED8vPjGY+3F7WyOeWsFM5t4UBdVw7yuv6NQ6c2d3kckjpercCC2QDbubfnNA50uF1Jt5EwqyZpBVWT2ys2euWMrvX+JyWnr+Z0eBT8TJCqfKqbxxhJXa2W60TWvTodLreaJtXx2t4iCaCL0bhKC77TXsWertrVXzvhkmhxxE9+xthnYG1x8QDxr0egrzdHOjGQZYp5h1DIpGP2vBEji1wIG3usirPuK3WvZ80mR5Dht2SPAdNMSGgNLRZHsoXz7grEpODnNNNyTXVvTRV+tE9iiU8cMscOJpqMHGTuklattrrvtqm/Z6zQg7UdRdkyCooKLGniG0T1bfXduPp9awxn+X6wHjjFA7ewjltjPZPqL6PtXo17NiwMUYWMblePjnigRuHaJ/0iBy7h7E0mMabgPyHisjJAEQI5WDs4e9x9FBK+rkk9vqn69j05NweSEa5l4eJbOv4v6+y7nlycrrdbYbsMmbE0f7HZP8Aa3LX9NP1hkeuP7li+HRo/p2N3/Gt49/Mr79NP1jkf8P7pizSk5YXJ9Z/+rN2OCx8TGEdlir4mkaOkpWkpUHQsiK0qhBaSlaSl5IJS7P8nB7WUPFsZ9xd+K42ltejer+Rzbi0uje3ZI0Vuq7BF94/FXcPNQyxk9v/AIZOPxSy8NOEVq1p7NP+h+rrTa1orcvY7e+GaK+qkYT2b9F/aKK8vwzw/wD7Pqx+Kvwyw/GX6tdeebBNcspKvU+WxcJxuKanCEk15Hyjh1eIbRJjTjue7cHAengP4q4GgzOnbkZ0onlj4xxt/k2EcjyHL0Dnx4r6fDLD8Zfq0+GWH4y/Vqq+HtN5LrvKzTKPHU1HBy3o2o06669L8qOiXh1v+aZR/wBXm+7K1fwyw/GX6tafpF0rjlgdFjh/xopzntDQG94HHiTyVmTisSg6kijh/wAO4nxY3jaVrV6Lc4whA1Wl79G1STDkdJE1jnOaWEPBIokHuIo8AuJFK0mz7CcpJNxVv1r89fsb9gP5jfw49aOH/FavVoWi+Rag1hk6zdjPfe3bXbAIqz4LxfDrJ/ZQ/Rk/xLyO6VzHIbOWRb2xmINp+2ib+ddrasmFOMrdrlWz6b/NnHeDipRyQcUlPne6eskqW3St+t7aHj1XUchuRO1s8wAmlAAmkAA3nlxXt6O4eZkzxTb5NsLr657nvAHe1tntXxBAWjyZjJI+QgAyOc8gcrcSTXvXum13JfjsgL6jY3Z2eBeO4OPeAOFcvG1njNc1zut6Xrp6G/Ljm8ajjSt6Nvoqp6dX5HZa7edjTMwZWPLZPjmt859dwPsHHka5rjdC0p02XHE5pAa7dM1zSC1rT2rB5Xy9oXkwsuSB4kheY3jvHePAjkR6Cti7pLkmfrw9rZOrERAb2C0X8k99kn1+5WTywytSnd9ezXl2/qZ8XDZuGhLHiaaadN6NS86VP19tj29M5nZOYI4Wul6hoYWsaXncTbqA9g9hXy07odky9qUNx2d5ebkr0NH8aXg0vWp8Z0r4yHOmHbLwXWbvdz87iefiV88/V8nI/lZnuDvkXtZ9EUF5eTHJuc02302Xzvse4Ys+OEcWJxUUkrdt+brbfzZ2I1vFwImw9dJmFtWQ5r9gHg7kAK4NskehfHUsWHVgHY+WRI0cMeQja2ufY5j0u4rhqWQPI944g94Xt8U5LllFOPbVfnv9zxH8NjCXiY5tT70nd76Ul8U/M2eb0by4Cd0Lnt+fGOtafdxHtAXn0Z80eVEYWb5g6mscDRJBHEcO4kr14fSfNioCV0gHyZKkHvPH7V8269kNyX5LS0SSDa7sksraBQB5cgfYq28VpxbWvlp6f4Ll/qHGUZxi9H1aTfZp9O9P7nU52vZUE8eO92HufVuDZ9ke7zdx3d/2CivBrEmSdRwm5LYwWSxbHxiQMeDK2/OJ4g8P/IXKSyOe5znkuc4klxNkk87WwGu5Bbjtc4ObivbIyxZJabbuPMgcvUrHxLmmpXumvnZlEOBWKUZQSumnpW63X2p7rzOq6Raviw5BZLhMneGtJkcyJxII4DtNJXj+F2L1fV+Qt6kG+qqLq7u727a9K5rVtQflSmWUNDiAKYCG8B6SV46Uz4ufM+Xb0Qw/hmJYorInaSv6pVflrXwfovRnNgyHuMOC3HDWG5mxsaDxHZBDRd8/YuGkzHMynzQu4tmfIw9x7ZI9YI+xfePXchuMMZjgyMbgXNFSODnEkF18rJ5UtZS8Zc/PGKXTXotfKvv1LOF4Pw8mSTWjpJW5aK9W337dPc3eJq+RlZmL10hIGRCQwGox8Y3k0cPaeK+/TCZ8eovfE4seGsIc00R2AOfqK0WJMYpI5GgF0T2yNB5EtcCL9HBffVNQfkzGZ4a15DQQwEN4ChVklefFvG03raf5UWLBWaLjFcqi18tdOxvdA0EAHM1DsRM+MDZLt5u7cD3X3c3H7dZ0g1Z+dPbQerbbYo+ZA7ya+UfwHcvPqOrT5IYJpC4MADW8hYFWR3uPisdJ1F+LKJYg0vAc0B4JbxHoIR5I0scdI9e79vLt72eYYcnM82SnOmoraKXZPfXq68qo33RbRXQu8rywYIoQXNDwWOJqrI5gC+HeTS5/Vsw5GRLLVdY8loPMDk0H2AL0arreRl11r+yDYjaNsYPq7/ba1tKMmSLioQWi113bPXD4Zqby5WuZpKlsktavdu9W/SiUlK0lKk2EpFaRAZ0lKooIJSUqlICJStIgJSUqiAlJSqICJSqICUlKogJSUrSICUlKogJSUqiAlJSyUQEpKVRASkpVEBKSlUQEpKVRASkpWkQEpKVSkBKSlUpASkpVKQEpFUQFRVFBFkRVEFkRZKILIiyRBZiiqILIiyRBZiiqILIiqILIiqILIiyRBZiiyUQWRFVUFmKKogsiKogsiLJRBZEWSILMUWSILMUVRBZEVRBZEWSILKiIoICIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgP/Z">
+<body>
+    <!-- Nav區塊 --->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="https://mis.npust.edu.tw/wp-content/uploads/2019/05/LOGO-D2-2S-1.png"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#history">台南歷史</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#eat">台南美食</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#attractions">台南景點</a>
+                    </li>
+                </ul>
             </div>
-
         </div>
-        <div>
-            <p>12345</p>
+    </nav>
+    <!-- Jumbotron區塊 --->
+    <div id="history">
+        <p class="title">台南歷史</p>
+        <hr>
+        <p>&emsp;&emsp;大約3000年前，在台南出現了擁有稻作技術的左鎮人文化，其後兩千多年來，一直為西拉雅族的世居地。在16世紀的大航海時代，台南開始出現小型漢人聚落，亦有來自中國東南沿海的海賊出沒。世紀初，荷蘭東印度公司從巴達維亞前來，與中國及日本進行貿易，原先欲占領澎湖作為貿易基地，但因為遭明朝將領沈有容諭退，轉而前往鄰近的台灣，尋找合適的貿易基地。1624年，荷蘭人來到適宜設置港口的台江內海（今台南市區）後，設立了台灣第一個城鎮。此後經過鄭氏王朝與清朝的發展，二百餘年來臺南一直是全臺首邑。</p>
+        <p>&emsp;&emsp;至1683年，清國平臺，在臺南設臺灣府，為全臺首府。1885年，臺灣建省，遂改臺灣府為臺南府，是為臺南得名之緣由。直至十九世紀末期，臺南一直是臺灣政治經濟文化之重心，由於這層歷史淵源，故臺南市古蹟名勝特多，佔有臺灣最悠久歷史及文化發展地位，稱為文化古都，聞名全臺，實有其緣由也。</p>
+    </div>
+    <!-- Card區塊 --->
+    <div id="eat">
+        <p class="title">台南美食</p>
+        <hr>
+    </div>
+    <div class="teacher container">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://image.cache.storm.mg/styles/smg-800x533-fp/s3/media/image/2015/11/13/20151113-015454_U3250_M102460_891f.PNG?itok=OqyERr-k" class="card-img-top" alt="擔仔麵">
+                    <div class="card-body">
+                        <p class="card-text">擔仔麵</p>
+                        <p>擔仔麵（臺灣話：tànn-á-mī）是一種發源於臺灣臺南的小吃。「擔仔（tànn-á）」即臺灣話「挑肩擔」之意。</p>
+                        <p>擔仔麵發源時間相傳為清末光緒年間，創始者為臺南的洪芋頭。</p>
+                        <p>臺南海邊清明時節常有暴雨，夏季常有颱風侵擾，不易出海捕魚，生計頓時艱困。臺灣話稱收入不佳的淡季為「小月」，以捕魚為業的洪芋頭在無法出海捕魚的「小月」，常於臺南水仙宮前挑著扁擔，叫賣麵食，以度過「小月」，並自名「度小月擔仔麵」。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://i1.wp.com/img.itainan.com.tw/uploads/20201024192443_13-scaled.jpg?resize=600%2C400&quality=100" class="card-img-top" alt="碗粿">
+                    <div class="card-body">
+                        <p class="card-text">碗粿</p>
+                        <p>阿蘭碗粿從選米、淘米、研磨、下料、炊煮等均需要經過嚴格的品質管制，貨真價實，用料實在，碗粿裡有著香菇、蛋黃等內料，淋上特製醬油，再配上一碗熱騰騰的湯，保證讓您回味無窮。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://cdn2.ettoday.net/images/1551/1551946.jpg" class="card-img-top" alt="棺材板">
+                    <div class="card-body">
+                        <p class="card-text">棺材板</p>
+                        <p>棺材板是一種臺灣小吃，是台南當地的特色食品。</p>
+                        <p>棺材板創始店是位於中正路俗稱沙卡里巴的康樂市場內的「盛場老赤嵌」店。在1940年代，雞肝屬於上等食材，創始人許六一採用雞肝為主要內餡並將之命名為雞肝板。有一天，成大附屬工業學校（國立成功大學前身）一位教授來到沙卡里巴食用雞肝板後，覺得其外形很像一個棺材。於是許六一就將其命名為「棺材板」。另有資料認為，棺材板原名機關板，是許姓師傅自己想出來的名字。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://d32kak7w9u5ewj.cloudfront.net/media/image/2016/10/d14b19912f394ab18c3b609a3c8b251e.jpg" class="card-img-top" alt="牛肉湯">
+                    <div class="card-body">
+                        <p class="card-text">牛肉湯</p>
+                        <p>流行於臺南的小吃。特色在於使用當日清晨宰殺的新鮮溫體牛肉，全程不冷凍。</p>
+                        <p>只用臺灣的本土牛肉，因為國外的牛肉經過長時間運送、 冷藏，口感無法和新鮮牛肉相提並論。台南牛肉湯的牛肉源頭95%是乳牛，乳牛因骨架大且肉少。商家通常只能購得肉商成套搭售的肉品。所以各家牛肉湯通常會混有上、中、下等的肉，味道差異主要在於高湯熬製方法。</P>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</head>
-<body>
+    <div id="attractions">
+        <p class="title">台南景點</p>
+        <hr>
+    </div>
+    <div class="teacher container">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://pic.pimg.tw/askeyelive/1461578408-568733691_wn.jpg" class="card-img-top" alt="安平古堡">
+                    <div class="card-body">
+                        <p class="card-text">安平古堡</p>
+                        <p>又稱熱蘭遮城（以台語譯荷蘭文：荷蘭語：Zeelandia；臺灣話：Jia̍t-lân-jia-siânn）是一座曾經存在於臺灣臺南市的堡壘。
+                            最初建於1624年，是臺灣最早的要塞建築。自建城以來，曾是荷蘭人統治臺灣的中樞，也曾是鄭氏王朝統治者的住處。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://pic.pimg.tw/l50740/1547595482-2200552179.jpg" class="card-img-top" alt="赤崁樓">
+                    <div class="card-body">
+                        <p class="card-text">赤崁樓</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://ikiwi.tw/wp-content/uploads/thumb_20200716140012_94.jpg" class="card-img-top" alt="瓦盤鹽田">
+                    <div class="card-body">
+                        <p class="card-text">瓦盤鹽田</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://images.newtalk.tw/resize_action2/600/album/news/203/5c525e37d62db.jpg" class="card-img-top" alt="全台首學-孔廟">
+                    <div class="card-body">
+                        <p class="card-text">孔廟</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>
+
 </html>
